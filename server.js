@@ -1,20 +1,15 @@
-// Srt VAR declaration
+// VAR declaration
 	var express = require('express');
+	var middleware = require('./modules/middleware.js');
 	var app = express();
+	
 	var PORTLISTEN = 3000;
-
-	var middleware = require('/modules/middleware.js');
-	// End VAR declaration
+	// End
 
 
-app.use(express.static(__dirname + '/public'));
 
-// app.use(middleware.requireAuthentification);
-app.use(middleware.logger);
+app.use(middleware.logger); // Need to be on the beginning of the function we want to track
 
-// app.get('/about', function(request, response){
-// 	response.send('About Us');
-// });
 
 
 
@@ -22,14 +17,7 @@ app.get('/about', middleware.requireAuthentification, function(request, response
 	response.send('About Us !');
 });
 
-
-
-// app.get('/', function(request, response){
-// 	response.send('Hello Express!');
-// });
-
-
-
+app.use(express.static(__dirname + '/public')); // accessible by public
 
 
 
