@@ -1,18 +1,11 @@
-var express = require('express');
-var app = express();
-var PORTLISTEN = 3000;
+// Srt VAR declaration
+	var express = require('express');
+	var app = express();
+	var PORTLISTEN = 3000;
 
-var middleware = {
-	requireAuthentification: function (req, res, next){
-		console.log('private route hit!');
-		next();
-		},
-	logger: function (req, res, next){
-		
-		console.log(new Date().toString() + ' || request: ' + req.method + ' ' + req.originalUrl);
-		next();
-		}
-};
+	var middleware = require('/modules/middleware.js');
+	// End VAR declaration
+
 
 app.use(express.static(__dirname + '/public'));
 
