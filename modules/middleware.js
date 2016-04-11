@@ -3,7 +3,9 @@
 
 
 
-middleware = {
+module.exports = middleware
+
+var middleware = {
 	requireAuthentification: function (req, res, next){
 		console.log('private route hit!');
 		next();
