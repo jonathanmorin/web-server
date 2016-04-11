@@ -3,7 +3,7 @@
 	var middleware = require('./modules/middleware.js');
 	var app = express();
 	
-	var PORTLISTEN = 3000;
+	var PORTLISTEN = process.env.PORT || 3000;
 	// End
 
 
